@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.cldr.repository.UserRepository;
 
 
@@ -37,6 +37,7 @@ public class UserController {
       return userRepository.save(user);
   }
 
+  @CrossOrigin
   @GetMapping(path="/users")
   public @ResponseBody Iterable<User> getAllUsers() {
     // This returns a JSON or XML with the users
